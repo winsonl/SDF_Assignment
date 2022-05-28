@@ -19,7 +19,7 @@ class text(Resource):
         args = parser.parse_args()
         timeout_increases = int(args['expires_in'])
 
-        expires_at = datetime.datetime.now() + datetime.timedelta(seconds = int(args['expires_in']))
+        expires_at = str(datetime.datetime.now() + datetime.timedelta(seconds = int(args['expires_in'])))
 
         url = 'https://example.com/snippets'
 
@@ -32,8 +32,8 @@ class text(Resource):
             "snippet": args['snippet']
         }
 
-        json_data = json.dumps(post_data,sort_keys=True, default=str)
-        return json_data
+#         json_data = json.dumps(post_data,sort_keys=True, default=str)
+        return post_data
 
         # res = requests.post(url, data=json_data, headers = headers, timeout=timeout_increases)
         # return res
