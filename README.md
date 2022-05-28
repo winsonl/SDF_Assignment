@@ -15,7 +15,7 @@ I used several other libraries to help me such as requests, and several librarie
 ```
 
 ## Production Concerns
-I don't think I would ever implement this into production without major code review and debugging sessions. The expected result from the curl POST command did not look formatted in a sense and I did not spend time trying to figure out why that was the case: 
+I don't think I would ever implement this into production without major code review and debugging sessions. The expected result from the curl POST command did not look formatted in a sense and I did not have time to try to figure out why that was the case with the time allotted: 
 
 ```sh
 curl -X POST -H "Content-Type: application/json" -d '{"name":"recipe", "expires_in": 30, "snippet":"1 apple"}' http://127.0.0.1:5000/snippets
