@@ -15,11 +15,11 @@ I used several other libraries to help me such as requests, and several librarie
 ```
 
 ## Production Concerns
-I don't think I would ever implement this into production without major code review and debugging sessions. The expected result from the curl POST command outputted a string instead of a JSON. There was some issue parsing the data on my end and did not have time to troubleshoot the error due to the time constraints.
+I don't think I would ever implement this into production without major code review and debugging sessions. The expected result from the curl POST command outputted a string instead of a JSON. There was some issue parsing the data on my end and did not have time to troubleshoot the error due to the time constraints. (Note figured it out couple minutes afterwards: it was the datetime issue and resolved by changing the type in the variable)
 
 ```sh
 curl -X POST -H "Content-Type: application/json" -d '{"name":"recipe", "expires_in": 30, "snippet":"1 apple"}' http://127.0.0.1:5000/snippets
-"{\"expires_at\": \"2022-05-27 18:11:34.308573\", \"name\": \"recipe\", \"snippet\": \"1 apple\", \"url\": \"https://example.com/snippets\"}"
+{"url": "https://example.com/snippets", "name": "recipe", "expires_at": "2022-05-27 18:39:20.892242", "snippet": "1 apple"}
 ```
 
 ## Error Handling
@@ -29,4 +29,4 @@ Error handling was handled by the request parser, making the name, expires_in an
 I tried making use of the request library post function to make the POST request to a web page, and return the response text, however I could not get that to work. If I were to successfully implement it, it would then have added the x number of seconds to the timeout. Wasn't sure how to get the api to have a 'https://' host, so everything was tested with the default host that the app was running on.
 
 ## Improvement
-Spend some time figuring out why the POST returned the incorrect output and try to get the requests.post() to work in order to extend the timeout. 
+Spend some time figuring out the requests.post() to work in order to extend the timeout. 
