@@ -28,3 +28,5 @@ Error handling was handled by the request parser, making the name, expires_in an
 ## Things that did not work
 I tried making use of the request library post function to make the POST request to a web page, and return the response text, however I could not get that to work. If I were to successfully implement it, it would then have added the x number of seconds to the timeout. Wasn't sure how to get the api to have a 'https://' host, so everything was tested with the default host that the app was running on.
 
+## Improvement
+Spend some time figuring out why the POST returned the incorrect output and try to get the requests.post() to work in order to extend the timeout. 
