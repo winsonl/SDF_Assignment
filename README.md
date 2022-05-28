@@ -15,7 +15,7 @@ I used several other libraries to help me such as requests, and several librarie
 ```
 
 ## Production Concerns
-I don't think I would ever implement this into production without major code review and debugging sessions. The expected result from the curl POST command outputted a string instead of a JSON. There was some issue parsing the data on my end and did not have time to troubleshoot the error due to the time constraints. (Note figured it out couple minutes afterwards: it was the datetime issue and resolved by changing the type in the variable)
+I don't think I would ever implement this into production without major code review and debugging sessions. The expected result from the curl POST command outputted a string instead of a JSON. There was some issue parsing the data on my end and did not have time to troubleshoot the error due to the time constraints. (Note figured it out couple minutes afterwards regarding the resulting text)
 
 ```sh
 curl -X POST -H "Content-Type: application/json" -d '{"name":"recipe", "expires_in": 30, "snippet":"1 apple"}' http://127.0.0.1:5000/snippets
